@@ -1,0 +1,57 @@
+/* Control.module.css */
+.mainContainer {
+    background-color: rgb(253, 254, 255);
+    height: 100%;
+    display: flex;
+    /* Usamos flexbox para alinear los componentes */
+    flex-direction: row;
+    /* Coloca los elementos en fila (lado a lado) */
+    /* margin-left: 240px; */
+}
+
+.content {
+    height: 100vh;
+    margin-top: 50px;
+    flex-grow: 1;
+    /* Hace que la sección de contenido ocupe el espacio restante */
+}
+
+
+
+/* Estilo de la tabla */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agregar sombra a la tabla */
+}
+
+.table th, .table td {
+    padding: 20px 20px;
+    text-align: left;
+    font-size: 1rem; /* Tamaño de fuente de la tabla */
+}
+
+/* Estilo de las cabeceras de la tabla */
+.table th {
+    background-color: #3498db;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase; /* Añadido para estilo */
+}
+
+/* Estilo para las filas alternas de la tabla */
+.table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Efecto hover para las filas de la tabla */
+.table tr:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.02); /* Efecto de aumento suave al pasar el mouse */
+    transition: transform 0.3s ease;
+}

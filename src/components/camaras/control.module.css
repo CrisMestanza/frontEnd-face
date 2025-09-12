@@ -1,0 +1,56 @@
+/* Control.module.css */
+.mainContainer {
+  background-color: rgb(253, 254, 255);
+  height: 100%;
+  display: flex; /* Usamos flexbox para alinear los componentes */
+  flex-direction: row; /* Coloca los elementos en fila (lado a lado) */
+}
+
+.content {
+  height: 100vh;
+  margin-top: 50px;
+  flex-grow: 1; /* Hace que la sección de contenido ocupe el espacio restante */
+}
+
+.cameraContainer {
+  display: grid;
+  gap: 10px;
+  /* margin-top: 20px; */
+  margin: 20px;
+}
+
+.cameraBox {
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.singleColumn {
+  grid-template-columns: 1fr; /* Una cámara ocupa toda la pantalla */
+}
+
+.twoColumns {
+  grid-template-columns: 1fr 1fr; /* Dos cámaras ocupan el 100% del ancho entre ellas */
+}
+
+.threeColumns {
+  grid-template-columns: 1fr 1fr 1fr; /* Tres cámaras se dividen en tres partes iguales */
+}
+
+.fourColumns {
+  grid-template-columns: 1fr 1fr 1fr 1fr; /* Cuatro cámaras se dividen en cuatro partes iguales */
+}
+
+/* Estilos para el Sidebar */
+.sidebar {
+  width: 250px; /* Asignamos un ancho fijo al sidebar */
+  background-color: #333; /* Color de fondo del sidebar */
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Asegura que esté encima de otros elementos */
+}
+
+

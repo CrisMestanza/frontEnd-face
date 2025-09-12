@@ -1,0 +1,27 @@
+/* Control.module.css */
+.mainContainer {
+    background-color: #f0f2f5;
+    height: 100%;
+    display: flex;
+    /* Usamos flexbox para alinear los componentes */
+    flex-direction: row;
+    /* Coloca los elementos en fila (lado a lado) */
+    /* margin-left: 240px; */
+    min-height: 100vh;
+}
+
+.content {
+    height: 100vh;
+    margin-top: 50px;
+    flex-grow: 1;
+    background: white;
+}
+
+.sidebarClosed {
+  margin-left: 0;
+}
+
+.content {
+  flex-grow: 1;
+  
+}

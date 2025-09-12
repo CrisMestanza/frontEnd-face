@@ -1,0 +1,137 @@
+/* ListCamera.module.css */
+.ClaseCamara {
+  background-color: #0b5cb8; /* Fondo oscuro para todo el contenedor */
+  padding: 20px;
+  border-radius: 10px;
+  /* margin-left: 240px; */
+  
+}
+
+h1 {
+  font-size: 25px;
+  text-align: center;
+  color: white;
+  margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.Central {
+  display: flex;
+  flex-direction: column; /* Para que los botones estén uno debajo del otro */
+  gap: 10px; /* Espacio entre los botones */
+}
+
+/* Estilos para el contenedor que tiene el ícono y el texto */
+.Central div {
+  display: flex;
+  align-items: center; /* Alinea verticalmente el ícono y el texto */
+  gap: 10px; /* Espacio entre el ícono y el texto */
+}
+
+.Central div h2 {
+  font-size: 18px;
+  color: white;
+  margin: 0; /* Elimina el margen de h2 */
+  display: inline-block; /* Hace que el texto se acomode al lado del ícono */
+}
+
+.Central div svg {
+  font-size: 30px; /* Ajusta el tamaño del ícono */
+  color: #f3eeee; /* Color del ícono */
+}
+
+/* Estilos para los botones */
+.cameraBtn {
+  background-color: #0f61bf; /* Color de fondo atractivo */
+  color: white; /* Texto blanco */
+  font-size: 18px; /* Tamaño de fuente adecuado */
+  padding: 15px 30px; /* Relleno adecuado para mayor tamaño */
+  border: none; /* Sin borde */
+  border-radius: 25px; /* Bordes redondeados */
+  cursor: pointer; /* El cursor cambia al pasar sobre el botón */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidad */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Transiciones suaves */
+}
+
+/* Efecto al pasar el ratón (hover) */
+.cameraBtn:hover {
+  background-color: #2980b9; /* Cambio de color cuando el mouse pasa por encima */
+  transform: scale(1.05); /* Aumento sutil del tamaño */
+}
+
+/* Efecto al hacer clic (active) */
+.cameraBtn:active {
+  background-color: #1f6fa7; /* Color más oscuro al hacer clic */
+  transform: scale(1); /* Vuelve al tamaño original */
+}
+
+/* Añadir efecto de enfoque (focus) */
+.cameraBtn:focus {
+  outline: none; /* Elimina el contorno predeterminado */
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.8); /* Añade un enfoque con sombra azul */
+}
+
+
+
+
+/* Estilo para el input de búsqueda */
+.inputBuscar {
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  font-size: 16px;
+  margin-top: 20px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo cuando el input tiene el foco (focus) */
+.inputBuscar:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}
+
+/* Estilo para el placeholder */
+.inputBuscar::placeholder {
+  color: #888;
+
+}
+
+
+
+
+
+
+
+
+
+.toggleBtn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: #3482db;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 50%;
+  font-size: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 1000; /* Asegura que el botón siempre esté sobre el sidebar */
+  margin-left: 250px;
+}
+
+.toggleBtn:hover {
+  background-color: #3498db;
+}
+
+
+/* Estilos de transición suave */
+.sidebar, .toggleBtn {
+  transition: transform 0.3s ease-in-out;
+}
+
+.toggleIcon {
+  font-size: 30px;
+}

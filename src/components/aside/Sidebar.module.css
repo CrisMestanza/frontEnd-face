@@ -1,0 +1,192 @@
+/* Importando fuente desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Estilos generales del sidebar */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #0b5cb8;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s ease-in-out;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  transform: translateX(0);
+  overflow-y: hidden; /* 👈 NO SCROLL EN TODO EL SIDEBAR */
+}
+
+.sidebarNav {
+  flex: 1;
+  padding-left: 10px;
+  overflow-y: hidden; /* 👈 OCULTO POR DEFECTO */
+}
+
+
+
+.sidebarNav:hover {
+  overflow-y: auto; /* 👈 APARECE AL PASAR EL MOUSE */
+}
+
+
+/* Estilo para ocultar el sidebar (cuando está cerrado) */
+.closed {
+  transform: translateX(-100%); /* Mueve el sidebar fuera de la pantalla */
+}
+
+/* Estilo para el sidebar cuando está abierto */
+.open {
+  transform: translateX(0); /* Regresa el sidebar al lugar */
+}
+
+.sidebarHeader {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar h2 {
+  font-size: 32px; /* Tamaño de fuente más grande */
+  font-weight: 600;
+  color: #ecf0f1;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+}
+
+/* Estilos para la imagen de usuario y nombre */
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-bottom: 10px; */
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Añadimos sombra suave para mejorar la estética */
+}
+
+.userName {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  color: #ecf0f1;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 5px;
+}
+
+/* Estilos del menú de navegación */
+.sidebarNav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebarNav li {
+  margin: 25px 0;
+}
+
+.sidebarNav a {
+  text-decoration: none;
+  color: #ecf0f1;
+  font-size: 22px; /* Aumentamos el tamaño de las letras */
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sidebarNav a:hover {
+  color: #3498db;
+  transform: scale(1.1); /* Efecto de aumento al pasar el ratón */
+}
+
+.sidebarIcon {
+  margin-right: 15px;
+  font-size: 24px;
+}
+
+/* Botón para abrir/cerrar el sidebar */
+.toggleBtn {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background-color: #3482db;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 50%;
+  font-size: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 1000; /* Asegura que el botón siempre esté sobre el sidebar */
+}
+
+.toggleBtn:hover {
+  background-color: #3498db;
+}
+
+.toggleIcon {
+  font-size: 30px;
+}
+
+/* Estilos de transición suave */
+.sidebar, .toggleBtn {
+  transition: transform 0.3s ease-in-out;
+}
+
+
+/* Estilos para mi contenedor izquierdo */
+.mainContainer {
+  display: flex;
+  margin-left: 250px; 
+  transition: margin-left 0.3s ease; 
+  flex-grow: 1;
+  height: 100%;
+}
+
+.mainContainer.sidebarClosed {
+  margin-left: 0; 
+}
+
+.content {
+  flex-grow: 1; 
+  padding-left: 40px;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-left: 40px;
+}
+
+
+.sidebarContainer{
+  margin-left: 240px;
+}
+
+
+.toggleButton {
+  /* margin: 10px 20px; */
+  padding: 10px 15px;
+  border-radius: 12px;
+  background-color: #2069bd;  /* color de fondo normal */
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.toggleButton:hover {
+  background-color: #2477d5;  /* color de fondo cuando pasa el mouse */
+}
+
+
+
+
+
