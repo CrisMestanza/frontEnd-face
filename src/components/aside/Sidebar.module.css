@@ -1,192 +1,223 @@
 /* Importando fuente desde Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-/* Estilos generales del sidebar */
+/* ====== SIDEBAR ====== */
 .sidebar {
   width: 250px;
   height: 100vh;
-  background-color: #0b5cb8;
-  color: white;
+  background: linear-gradient(180deg, #065aae 0%, #0c0c0c 100%); /* Azul/gris suave */
+  color: #ecf0f1;
   display: flex;
   flex-direction: column;
-  padding: 30px;
-  position: fixed;
+  padding: 25px;
+  /* position: fixed; */
   top: 0;
   left: 0;
-  transition: transform 0.5s ease-in-out;
-  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease-in-out;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.08);
   z-index: 999;
   transform: translateX(0);
-  overflow-y: hidden; /* 👈 NO SCROLL EN TODO EL SIDEBAR */
+  overflow-y: hidden;
+  border-radius: 0 12px 12px 0; /* bordes redondeados */
 }
 
+/* Scroll solo al hacer hover */
 .sidebarNav {
   flex: 1;
   padding-left: 10px;
-  overflow-y: hidden; /* 👈 OCULTO POR DEFECTO */
+  overflow-y: hidden;
 }
-
-
 
 .sidebarNav:hover {
-  overflow-y: auto; /* 👈 APARECE AL PASAR EL MOUSE */
+  overflow-y: auto;
 }
 
-
-/* Estilo para ocultar el sidebar (cuando está cerrado) */
+/* ====== ESTADOS ====== */
 .closed {
-  transform: translateX(-100%); /* Mueve el sidebar fuera de la pantalla */
+  transform: translateX(-100%);
 }
-
-/* Estilo para el sidebar cuando está abierto */
 .open {
-  transform: translateX(0); /* Regresa el sidebar al lugar */
+  transform: translateX(0);
 }
 
+/* ====== HEADER ====== */
 .sidebarHeader {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .sidebar h2 {
-  font-size: 32px; /* Tamaño de fuente más grande */
+  font-size: 28px;
   font-weight: 600;
-  color: #ecf0f1;
+  color: #f8f9fa;
   font-family: 'Poppins', sans-serif;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
-/* Estilos para la imagen de usuario y nombre */
+/* ====== USER ====== */
 .userInfo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* margin-bottom: 10px; */
+  margin-bottom: 25px;
 }
 
 .avatar {
-  width: 80px;
-  height: 80px;
+  width: 85px;
+  height: 85px;
   border-radius: 50%;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   object-fit: cover;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Añadimos sombra suave para mejorar la estética */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .userName {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 500;
   text-align: center;
   color: #ecf0f1;
   font-family: 'Poppins', sans-serif;
-  margin-top: 5px;
 }
 
-/* Estilos del menú de navegación */
+/* ====== NAV ====== */
 .sidebarNav ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 .sidebarNav li {
-  margin: 25px 0;
+  margin: 18px 0;
 }
 
 .sidebarNav a {
   text-decoration: none;
   color: #ecf0f1;
-  font-size: 22px; /* Aumentamos el tamaño de las letras */
+  font-size: 18px;
   display: flex;
   align-items: center;
-  transition: color 0.3s ease, transform 0.3s ease;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
   font-family: 'Poppins', sans-serif;
 }
 
 .sidebarNav a:hover {
-  color: #3498db;
-  transform: scale(1.1); /* Efecto de aumento al pasar el ratón */
+  background: rgba(255, 255, 255, 0.08);
+  color: #a5d6ff;
+  transform: translateX(5px); /* pequeño movimiento al hover */
 }
 
 .sidebarIcon {
-  margin-right: 15px;
-  font-size: 24px;
+  margin-right: 12px;
+  font-size: 22px;
+  opacity: 0.85;
 }
 
-/* Botón para abrir/cerrar el sidebar */
+/* ====== BOTÓN TOGGLE ====== */
 .toggleBtn {
   position: fixed;
-  top: 10px;
-  left: 10px;
-  background-color: #3482db;
+  top: 15px;
+  left: 15px;
+  background-color: #3b4a61;
   color: white;
   border: none;
-  padding: 15px 25px;
+  padding: 12px 14px;
   border-radius: 50%;
-  font-size: 10px;
+  font-size: 14px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  z-index: 1000; /* Asegura que el botón siempre esté sobre el sidebar */
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .toggleBtn:hover {
-  background-color: #3498db;
+  background-color: #4e637f;
 }
 
 .toggleIcon {
-  font-size: 30px;
+  font-size: 24px;
 }
 
-/* Estilos de transición suave */
-.sidebar, .toggleBtn {
-  transition: transform 0.3s ease-in-out;
-}
-
-
-/* Estilos para mi contenedor izquierdo */
+/* ====== MAIN CONTENT ====== */
 .mainContainer {
   display: flex;
-  margin-left: 250px; 
-  transition: margin-left 0.3s ease; 
+  margin-left: 250px;
+  transition: margin-left 0.3s ease;
   flex-grow: 1;
   height: 100%;
 }
 
 .mainContainer.sidebarClosed {
-  margin-left: 0; 
+  margin-left: 0;
 }
 
 .content {
-  flex-grow: 1; 
+  flex-grow: 1;
   padding-left: 40px;
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.6rem;
   margin-left: 40px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  color: #2c3e50;
 }
 
-
-.sidebarContainer{
-  margin-left: 240px;
-}
-
-
+/* ====== BOTÓN EXTRA ====== */
 .toggleButton {
-  /* margin: 10px 20px; */
   padding: 10px 15px;
   border-radius: 12px;
-  background-color: #2069bd;  /* color de fondo normal */
+  background-color: #3b4a61;
   color: #fff;
   cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
 }
 
 .toggleButton:hover {
-  background-color: #2477d5;  /* color de fondo cuando pasa el mouse */
+  background-color: #4e637f;
+  transform: scale(1.05);
 }
 
 
 
 
 
+
+.dropdownToggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdownToggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.submenu {
+  list-style: none;
+  margin: 0;
+  padding-left: 25px;
+  animation: fadeIn 0.3s ease;
+}
+
+.submenu li {
+  margin: 5px 0;
+}
+
+.arrow {
+  font-size: 0.8rem;
+  margin-left: auto;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-3px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -4,7 +4,7 @@ import styles from './ListCamera.module.css';  // Importamos el archivo CSS Modu
 import { BsCamera } from "react-icons/bs";
 import { FaBars, FaTimes } from 'react-icons/fa';
 
-const ListCamera = ({ handleCameraChange }) => {
+const ListCameraMatricula = ({ handleCameraChange }) => {
   const [camaras, setCamaras] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -22,7 +22,7 @@ const ListCamera = ({ handleCameraChange }) => {
   }, [inputValue]);
 
   const cargarCamaras = () => {
-    axios.get('http://127.0.0.1:8000/api/camaras/')
+    axios.get('http://192.168.100.32:8000/api/camaras/')
       .then(response => {
         setCamaras(response.data);
       })
@@ -32,7 +32,7 @@ const ListCamera = ({ handleCameraChange }) => {
   };
 
   const chargeValue = (value) => {
-    axios.get(`http://127.0.0.1:8000/api/camaraSearch/${value}/`)
+    axios.get(`http://192.168.100.32:8000/api/camaraSearch/${value}/`)
       .then(response => {
         setCamaras(response.data);
       })
@@ -63,7 +63,8 @@ const ListCamera = ({ handleCameraChange }) => {
           {camaras.map((camara, index) => (
             <button
               key={camara.idcamara}
-              onClick={() => handleCameraChange(camara.ipcamar, camara.nombrecamara, camara.idcamara)}
+              onClick={() => handleCameraChange(index, camara.nombrecamara, camara.idcamara)}
+              // onClick={() => handleCameraChange(camara.ipcamar, camara.nombrecamara, camara.idcamara)}
               className={styles.cameraBtn}
             >
               <BsCamera /> {camara.nombrecamara}
@@ -83,4 +84,4 @@ const ListCamera = ({ handleCameraChange }) => {
   }
 };
 
-export default ListCamera;
+export default ListCameraMatricula;

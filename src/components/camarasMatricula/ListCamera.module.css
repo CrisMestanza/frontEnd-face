@@ -1,0 +1,127 @@
+.ClaseCamara {
+  width: 250px;
+  height: 100vh;
+  background: linear-gradient(180deg, #065aae 0%, #0c0c0c 100%);
+  color: #ecf0f1;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  top: 0;
+  left: 0;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.08);
+  z-index: 999;
+  overflow-y: auto;   /* permite scroll */
+  overflow-x: hidden;
+  border-radius: 0 12px 12px 0;
+}
+
+/* Título */
+h1 {
+  font-size: 22px;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+/* Contenedor de botones */
+.Central {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* === BOTONES DE CÁMARA === */
+.cameraBtn {
+  width: 100%; /* ocupar todo el ancho */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(180deg, #065aae 0%, #615b5b 100%);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+/* Icono dentro del botón */
+.cameraBtn svg {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+/* Hover */
+.cameraBtn:hover {
+  background: linear-gradient(135deg, #2980b9, #1c4f80);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* Active (cuando haces clic) */
+.cameraBtn:active {
+  transform: translateY(0) scale(0.98);
+  background: linear-gradient(135deg, #1f6fa7, #14406d);
+}
+
+/* Focus (accesibilidad) */
+.cameraBtn:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.9);
+}
+
+/* === INPUT DE BÚSQUEDA === */
+.inputBuscar {
+  padding: 10px;
+  width: 100%;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  font-size: 15px;
+  margin-top: 15px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inputBuscar:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+}
+
+.inputBuscar::placeholder {
+  color: #bbb;
+  font-size: 14px;
+}
+/* Botón toggle moderno */
+.toggleBtn {
+  /* position: fixed;        siempre fijo en la pantalla */
+  margin-top: 70px;
+  top: 15px;              /* margen desde arriba */
+  left: 15px;             /* lo mantenemos a la izquierda */
+  background: linear-gradient(135deg, #0f61bf, #065aae);
+  color: #fff;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;     /* círculo perfecto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  z-index: 1100;          /* encima del sidebar */
+}
+
+/* Animación hover */
+.toggleBtn:hover {
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+/* Icono */
+.toggleIcon {
+  font-size: 22px;
+}

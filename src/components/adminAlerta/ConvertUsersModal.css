@@ -1,0 +1,149 @@
+/* src/styles/ConvertUsersModal.css */
+
+.convert-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  font-family: "Inter", sans-serif;
+}
+
+.convert-modal-container {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+.convert-modal-close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #6b7280;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.convert-modal-close-button:hover {
+  color: #1f2937;
+}
+
+.convert-modal-container h3 {
+  font-size: 1.5rem;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.convert-modal-container p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+}
+
+.convert-modal-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.convert-modal-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.convert-modal-select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  color: #374151;
+  background-color: #f9fafb;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none; /* Eliminar estilo por defecto en WebKit */
+  -moz-appearance: none; /* Eliminar estilo por defecto en Firefox */
+  appearance: none; /* Eliminar estilo por defecto */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292%22%20height%3D%22292%22%20viewBox%3D%220%200%20292%20292%22%3E%3Cpath%20fill%3D%22%236B7280%22%20d%3D%22M287%2C197.8L146%2C56.9L5%2C197.8L40.2%2C233L146%2C127.1L251.8%2C233Z%22%2F%3E%3C%2Fsvg%3E"); /* Flecha personalizada */
+  background-repeat: no-repeat;
+  background-position: right 0.7rem top 50%;
+  background-size: 0.65rem auto;
+}
+
+.convert-modal-select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+  outline: none;
+}
+
+.convert-modal-error-message {
+  color: #ef4444;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.convert-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.convert-modal-cancel-button,
+.convert-modal-confirm-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: none;
+}
+
+.convert-modal-cancel-button {
+  background-color: #e5e7eb;
+  color: #4b5563;
+}
+
+.convert-modal-cancel-button:hover {
+  background-color: #d1d5db;
+  color: #374151;
+}
+
+.convert-modal-confirm-button {
+  background-color: #f97316; /* Naranja para la acción de convertir */
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(249, 115, 22, 0.3);
+}
+
+.convert-modal-confirm-button:hover {
+  background-color: #ea580c; /* Naranja más oscuro */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(249, 115, 22, 0.4);
+}
+
+/* Animaciones del modal */
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}

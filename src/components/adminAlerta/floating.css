@@ -1,0 +1,31 @@
+.form-group {
+  position: relative;
+  margin: 15px;
+}
+
+.form-group input {
+  width: 90%;
+  padding: 10px 5px;
+  font-size: 16px;
+  border: none;
+  border-bottom: 2px solid #2340a0;
+  background: transparent;
+  outline: none;
+  color: #074b3f;
+}
+
+.form-group label {
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  color: #666;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.3s ease all;
+}
+
+.form-group.focused label {
+  top: -12px;
+  font-size: 12px;
+  color: #0044ff;
+}

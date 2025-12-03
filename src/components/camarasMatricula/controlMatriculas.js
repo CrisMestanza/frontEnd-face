@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Sidebar from "../aside/aside";
-import ListCamera from "./listCamera";
+import ListCamera from "./listCameraMatriculas";
 import styles from './control.module.css';
 import { useNavigate } from 'react-router-dom';
 import useAlertas from "../newAlerta/useAlertas";
 import { ToastContainer } from 'react-toastify';
-
-const Control = () => {
+import Navbar from "../nabvar/Navbar";
+const ControlMatricula = () => {
   const alertas = useAlertas();
   const idUsuario = sessionStorage.getItem('idusuario');
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -35,7 +35,7 @@ const Control = () => {
     if (isSelected) {
       setSelectedCameras(prev => prev.filter(cam => cam.id !== camera));
 
-      axios.post(`http://127.0.0.1:8000/api/deseleccionar_camara/${camera}/`)
+      axios.post(`http://192.168.100.32:8000/api/deseleccionar_camara/${camera}/`)
 
         .then(response => {
           console.log("Cámara deseleccionada", response.data);
@@ -46,7 +46,7 @@ const Control = () => {
     } else {
       setSelectedCameras(prev => [...prev, { id: camera, nombre }]);
 
-      axios.post('http://127.0.0.1:8000/api/usuariosLogueado/', datos)
+      axios.post('http://192.168.100.32:8000/api/usuariosLogueado/', datos)
         .then(response => {
           console.log("Respuesta del backend:", response.data);
         })
@@ -68,8 +68,11 @@ const Control = () => {
 
   return (
     <div className={`${styles.mainContainer} ${isSidebarOpen ? '' : styles.sidebarClosed}`}>
-      <Sidebar toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
+      <Navbar />
+      <div style={{display: 'flex'}}> 
+        <Sidebar toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
       <ListCamera handleCameraChange={handleCameraChange} />
+      </div>
 
       <div className={styles.content}>
         <h1 style={{
@@ -91,7 +94,8 @@ const Control = () => {
             <div className={styles.cameraBox} key={id}>
               <p>Cámara {nombre}</p>
               <img
-                src={`http://127.0.0.1:8000/api/camera_feed/${id}/${nombre}/`}
+                // src={`http://192.168.100.32:8000/api/camera_feed/${id}/${nombre}/`}
+                src={`http://192.168.100.32:8000/api/camera_feed/${id}/`}
                 alt={`Cámara ${id}`}
                 style={{ width: "100%", maxWidth: "100%" }}
               />
@@ -104,4 +108,4 @@ const Control = () => {
   );
 };
 
-export default Control;
+export default ControlMatricula;

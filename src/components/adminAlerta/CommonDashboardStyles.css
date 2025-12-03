@@ -1,0 +1,426 @@
+/* src/styles/CommonDashboardStyles.css */
+
+/* Fuentes y colores base */
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Contenedor general si es compartido por un layout padre */
+.base-page-container {
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+}
+
+/* Tarjetas (DashboardCard) - Mapeo de colores (se asume que DashboardCard.jsx usa estas clases) */
+.card-blue {
+  background-color: #3b82f6;
+} /* blue-500 */
+.card-green {
+  background-color: #22c55e;
+} /* green-500 */
+.card-yellow {
+  background-color: #eab308;
+} /* yellow-500 */
+.card-purple {
+  background-color: #a855f7;
+} /* purple-500 */
+.card-red {
+  background-color: #ef4444;
+} /* red-500 */
+.card-indigo {
+  background-color: #6366f1;
+} /* indigo-500 */
+.text-white {
+  color: #ffffff;
+} /* Color de texto para las tarjetas */
+
+/* Contenedor principal de las secciones de contenido */
+.content-wrapper {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  padding-right: 10%;
+  width: 90%;
+  max-width: 90rem; /* Ancho máximo estándar para el contenido */
+  margin-bottom: 2.5rem;
+}
+
+/* Títulos de sección */
+.section-title {
+  font-size: 2rem; /* h3 general */
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Contenedor de botones de acción (ej. Registrar, Convertir) */
+.action-buttons-group {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap; /* Para responsividad */
+  justify-content: flex-end; /* Alineación a la derecha */
+}
+
+/* Botones de acción genéricos */
+.action-button {
+  font-weight: 600;
+  padding: 0.75rem 1.6rem;
+  border-radius: 0.6rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.25s ease-in-out, transform 0.15s ease-in-out;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.action-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.action-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Colores específicos para botones de acción */
+.action-button.green {
+  background-color: #10b981; /* Verde */
+}
+.action-button.green:hover {
+  background-color: #059669; /* Verde oscuro */
+}
+.action-button.blue {
+  background-color: #3b82f6; /* Azul */
+}
+.action-button.blue:hover {
+  background-color: #2563eb; /* Azul oscuro */
+}
+.action-button.orange {
+  background-color: #f97316; /* Naranja */
+}
+.action-button.orange:hover {
+  background-color: #ea580c; /* Naranja oscuro */
+}
+
+.icon-margin {
+  margin-right: 0.6rem;
+}
+
+/* Mensajes de error y carga */
+.error-message-text {
+  color: #ef4444;
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+  background-color: #fee2e2;
+  border: 1px solid #fca5a5;
+  padding: 0.8rem;
+  border-radius: 0.6rem;
+  text-align: center;
+}
+
+.loading-message-text {
+  color: #3b82f6;
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+  background-color: #e0f2fe;
+  border: 1px solid #93c5fd;
+  padding: 0.8rem;
+  border-radius: 0.6rem;
+  text-align: center;
+}
+
+/* Títulos de subsección dentro de las secciones grandes */
+.subsection-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #4b5563;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.75rem;
+}
+
+/* Contenedor y estilos de tabla */
+.table-container {
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-top: 1.5rem;
+}
+
+.data-table {
+  min-width: 100%;
+  background-color: #ffffff;
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.data-table thead {
+  background-color: #fcfdfe;
+}
+
+.data-table th,
+.data-table td {
+  padding: 1.2rem 1.6rem;
+  text-align: left;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.data-table td {
+  color: #334155;
+}
+
+.data-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.actions-cell {
+  text-align: right;
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+/* Botón de eliminar (genérico para tablas) */
+.delete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0rem;
+  border-radius: 0.9rem;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ef4444; /* Rojo */
+}
+
+.delete-button:hover {
+  color: #b91c1c; /* Rojo más oscuro */
+  background-color: #fee2e2;
+  border-radius: 50%;
+}
+
+.delete-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: none;
+  color: #9ca3af;
+}
+
+/* Mensaje cuando no hay datos en una tabla */
+.no-data-message {
+  padding: 1.8rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #6b7280;
+  font-style: italic;
+  background-color: #fcfcfc;
+}
+
+/* Estilos para checkbox en tablas */
+.checkbox-th {
+  width: 40px;
+  text-align: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.checkbox-td {
+  text-align: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.checkbox-td input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 0.25rem;
+  border: 1px solid #9ca3af;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  vertical-align: middle;
+}
+
+.checkbox-td input[type="checkbox"]:checked {
+  background-color: #2563eb;
+  border-color: #2563eb;
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.checkbox-td input[type="checkbox"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+}
+
+/* Estilos para el link de la cámara */
+.camera-url-link {
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
+}
+
+.camera-url-link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+/* Estilos para los badges de estado de alerta */
+.status-badge {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 9999px;
+  text-transform: capitalize;
+  display: inline-block;
+  min-width: 70px;
+  text-align: center;
+}
+
+.status-active {
+  background-color: #fce7f3;
+  color: #be185d;
+}
+
+.status-resolved {
+  background-color: #d1fae5;
+  color: #059669;
+}
+
+.status-default {
+  background-color: #e2e8f0;
+  color: #475569;
+}
+
+/* Media Queries Comunes (ajustadas) */
+@media (max-width: 1024px) {
+  .base-page-container,
+  .content-wrapper {
+    padding: 1.5rem;
+  }
+  .section-title {
+    font-size: 1.8rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .action-buttons-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .action-button {
+    width: 100%;
+    justify-content: center;
+  }
+  .subsection-title {
+    font-size: 1.3rem;
+  }
+  .data-table th,
+  .data-table td {
+    padding: 0.9rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .base-page-container,
+  .content-wrapper {
+    padding: 1rem;
+  }
+  .section-title {
+    font-size: 1.5rem;
+  }
+  .action-button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+  .subsection-title {
+    font-size: 1.1rem;
+  }
+  .data-table th,
+  .data-table td {
+    padding: 0.7rem 1rem;
+    font-size: 0.8rem;
+  }
+  .no-data-message {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+.card-pink {
+  background-color: #ec4899;
+} /* pink-500 */
+.card-cyan {
+  background-color: #06b6d4;
+} /* cyan-500 */
+
+/* Estilos para el contenedor de gráficos */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #f8f8f8;
+  border-radius: 1rem;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.chart-container {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Centrar el gráfico verticalmente */
+}
+
+.chart-container h5 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Ajustes para Recharts dentro de ResponsiveContainer */
+.recharts-wrapper {
+  margin: auto; /* Centra el gráfico horizontalmente */
+}
+
+/* Media Queries para gráficos */
+@media (max-width: 768px) {
+  .charts-grid {
+    grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+  }
+}

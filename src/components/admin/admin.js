@@ -8,7 +8,7 @@ import ModalEditar from "./modalEditar";
 import ModalEliminar from "./modalEliminar";
 import useAlertas from "../newAlerta/useAlertas";
 import { ToastContainer } from 'react-toastify';
-
+import Navbar from "../nabvar/Navbar";
 const Admin = () => {
     const alertas = useAlertas();
     const idUsuario = sessionStorage.getItem('idusuario'); //Para validar
@@ -115,6 +115,7 @@ const Admin = () => {
 
     return (
         <div className={styles.container}>
+            <Navbar />
             <Sidebar toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
             <div className={styles.content}>
                 <h1 className={styles.title}>Gestión de Cámaras</h1>

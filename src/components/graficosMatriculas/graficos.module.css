@@ -1,0 +1,17 @@
+/* Control.module.css */
+.mainContainer {
+    background-color: rgb(253, 254, 255);
+    height: 100%;
+    display: flex;
+    /* Usamos flexbox para alinear los componentes */
+    flex-direction: row;
+    /* Coloca los elementos en fila (lado a lado) */
+    /* margin-left: 240px; */
+}
+
+.content {
+    height: 100vh;
+    margin-top: 50px;
+    flex-grow: 1;
+    /* Hace que la sección de contenido ocupe el espacio restante */
+}
